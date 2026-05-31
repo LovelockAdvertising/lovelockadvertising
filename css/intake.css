@@ -1,0 +1,701 @@
+/* =========================================================================
+   LOVELOCK ADVERTISING:Intake Modal
+   Multi-step lead qualification flow. Vanilla, scoped, additive only.
+   Uses the hero's electric lime (#BFFF00) to match the hero CTA / accents.
+   ========================================================================= */
+:root {
+  --intake-lime: #BFFF00;
+  --intake-lime-hover: #A8E300;
+}
+
+/* ---------------------------------------------------------------------
+   Hero email teaser:premium dark glass pill with lime accents
+   --------------------------------------------------------------------- */
+.hero-email-form {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  width: min(720px, 94vw);
+  padding: 0.55rem 0.55rem 0.55rem 1.5rem;
+  background:
+    linear-gradient(135deg, rgba(191, 255, 0, 0.04), rgba(191, 255, 0, 0) 60%),
+    rgba(10, 10, 10, 0.55);
+  border: 1.5px solid rgba(191, 255, 0, 0.32);
+  border-radius: var(--r-pill);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: border-color var(--t-med) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out),
+              transform var(--t-med) var(--ease-out);
+}
+
+.hero-email-form::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: var(--intake-lime);
+  filter: blur(22px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 400ms var(--ease-out);
+  pointer-events: none;
+}
+
+.hero-email-form:hover {
+  border-color: rgba(191, 255, 0, 0.55);
+  transform: translateY(-2px);
+}
+
+.hero-email-form:focus-within {
+  border-color: var(--intake-lime);
+  box-shadow:
+    0 14px 50px rgba(0, 0, 0, 0.55),
+    0 0 0 4px rgba(191, 255, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hero-email-form:focus-within::before { opacity: 0.28; }
+
+.hero-email-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color var(--t-med) var(--ease-out);
+}
+
+.hero-email-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.hero-email-form:focus-within .hero-email-icon {
+  color: var(--intake-lime);
+}
+
+.hero-email-form input[type="email"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  caret-color: var(--intake-lime);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  padding: 1.05rem 0;
+}
+
+.hero-email-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Kill Chrome/Safari autofill yellow + force on-brand styling */
+.hero-email-form input[type="email"]:-webkit-autofill,
+.hero-email-form input[type="email"]:-webkit-autofill:hover,
+.hero-email-form input[type="email"]:-webkit-autofill:focus,
+.hero-email-form input[type="email"]:-webkit-autofill:active {
+  -webkit-text-fill-color: #FFFFFF !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(10, 10, 10, 0.001) inset !important;
+  box-shadow: 0 0 0 1000px rgba(10, 10, 10, 0.001) inset !important;
+  caret-color: var(--intake-lime) !important;
+  transition: background-color 9999s ease 0s, color 9999s ease 0s;
+}
+
+.hero-email-form button {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--intake-lime);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--r-pill);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.85rem;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 6px 20px rgba(191, 255, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: background var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out);
+}
+
+.hero-email-send {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  z-index: 1;
+  transition: transform 400ms var(--ease-spring);
+}
+
+.hero-email-form button:hover .hero-email-send {
+  transform: translate(3px, -3px) rotate(8deg);
+}
+
+.hero-email-form button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 700ms var(--ease-out);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-email-form button > * { position: relative; z-index: 1; }
+
+.hero-email-form button:hover {
+  background: var(--intake-lime-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 32px rgba(191, 255, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.hero-email-form button:hover::before { transform: translateX(120%); }
+
+.hero-email-form button:active { transform: translateY(0); }
+
+@media (max-width: 620px) {
+  .hero-email-form {
+    flex-direction: column;
+    border-radius: var(--r-lg);
+    padding: 0.65rem;
+    gap: 0.6rem;
+  }
+  .hero-email-icon { display: none; }
+  .hero-email-form input[type="email"] {
+    padding: 1rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .hero-email-form button {
+    padding: 1.05rem 1.4rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Modal shell:fullscreen takeover
+   --------------------------------------------------------------------- */
+.intake-modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  z-index: 9999;
+  background: var(--intake-lime);
+  color: var(--ink);
+  display: none;
+  flex-direction: column;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.intake-modal.is-open {
+  display: flex;
+  animation: intakeFadeIn 280ms var(--ease-out);
+}
+
+@keyframes intakeFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+body.intake-open {
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------------
+   Progress bar
+   --------------------------------------------------------------------- */
+.intake-progress {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(10, 10, 10, 0.10);
+  z-index: 5;
+  flex: 0 0 auto;
+}
+
+.intake-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--ink);
+  transition: width 420ms var(--ease-out);
+}
+
+/* ---------------------------------------------------------------------
+   Close button
+   --------------------------------------------------------------------- */
+.intake-close {
+  position: absolute;
+  top: clamp(0.75rem, 2vw, 1.5rem);
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.8px solid var(--ink);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: background var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out);
+}
+
+.intake-close:hover {
+  background: var(--ink);
+  color: var(--intake-lime);
+  transform: rotate(90deg);
+}
+
+/* ---------------------------------------------------------------------
+   Screen container
+   --------------------------------------------------------------------- */
+.intake-stage {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3rem);
+  position: relative;
+}
+
+.intake-screen {
+  display: none;
+  width: 100%;
+  max-width: min(780px, 100%);
+  min-width: 0;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* margin:auto in a flex-column parent centers the screen both axes,
+   and gracefully top-aligns + scrolls when content is taller than viewport */
+.intake-screen.is-active {
+  display: block;
+  margin: auto;
+  animation: intakeScreenIn 420ms var(--ease-out);
+}
+
+@keyframes intakeScreenIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intake-modal.is-open,
+  .intake-screen.is-active { animation: none; }
+}
+
+/* ---------------------------------------------------------------------
+   Typography inside the modal
+   --------------------------------------------------------------------- */
+.intake-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.7;
+  margin-bottom: 1.25rem;
+}
+
+.intake-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.intake-sub {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.78;
+  max-width: 560px;
+  margin: 0 auto 2.25rem;
+}
+
+.intake-question {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+
+/* ---------------------------------------------------------------------
+   Big black CTA button (used on intro + contact + thank you)
+   --------------------------------------------------------------------- */
+.intake-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.15rem 2.2rem;
+  background: var(--ink);
+  color: var(--intake-lime);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform var(--t-fast) var(--ease-out),
+              background var(--t-fast) var(--ease-out),
+              color var(--t-fast) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out);
+}
+
+.intake-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(10, 10, 10, 0.25);
+}
+
+.intake-btn:active { transform: translateY(0); }
+
+.intake-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.intake-btn .arrow {
+  display: inline-block;
+  transition: transform var(--t-med) var(--ease-spring);
+}
+
+.intake-btn:hover .arrow { transform: translateX(4px); }
+
+.intake-cta-note {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--ink);
+  opacity: 0.65;
+}
+
+/* ---------------------------------------------------------------------
+   Multiple-choice option cards
+   --------------------------------------------------------------------- */
+.intake-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.intake-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 64px;
+  padding: 1rem 1.25rem;
+  background: #FFFFFF;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-md);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: transform var(--t-fast) var(--ease-out),
+              background var(--t-fast) var(--ease-out),
+              box-shadow var(--t-fast) var(--ease-out);
+}
+
+.intake-option:hover {
+  background: var(--ink);
+  color: var(--intake-lime);
+  transform: translateX(4px);
+  box-shadow: -4px 4px 0 0 rgba(10, 10, 10, 0.12);
+}
+
+.intake-option:hover .intake-option-key { background: var(--intake-lime); color: var(--ink); }
+
+.intake-option.is-selected {
+  background: var(--ink);
+  color: var(--intake-lime);
+}
+
+.intake-option-key {
+  flex: 0 0 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--intake-lime);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: background var(--t-fast) var(--ease-out), color var(--t-fast) var(--ease-out);
+}
+
+.intake-option-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* ---------------------------------------------------------------------
+   Text + form inputs (industry + contact info)
+   --------------------------------------------------------------------- */
+.intake-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  text-align: left;
+}
+
+.intake-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.intake-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.75;
+}
+
+.intake-field input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-sm);
+  padding: 0.95rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  transition: background var(--t-fast) var(--ease-out), box-shadow var(--t-fast) var(--ease-out);
+}
+
+.intake-field input::placeholder {
+  color: rgba(10, 10, 10, 0.45);
+}
+
+.intake-field input:focus {
+  outline: none;
+  background: var(--surface);
+  box-shadow: 0 0 0 4px rgba(10, 10, 10, 0.12);
+}
+
+.intake-field-single {
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+}
+
+.intake-field-single input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-sm);
+  padding: 1.1rem 1.3rem;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-align: center;
+}
+
+.intake-field-single input:focus {
+  outline: none;
+  background: var(--surface);
+  box-shadow: 0 0 0 4px rgba(10, 10, 10, 0.12);
+}
+
+/* ---------------------------------------------------------------------
+   Error message
+   --------------------------------------------------------------------- */
+.intake-error {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.85rem 1.1rem;
+  background: var(--ink);
+  color: #FF6B6B;
+  border-radius: var(--r-sm);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.intake-error.is-visible { display: block; }
+
+/* ---------------------------------------------------------------------
+   Thank you screen flourish
+   --------------------------------------------------------------------- */
+.intake-thanks-emoji {
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.intake-thanks-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding-bottom: 2px;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ink);
+  transition: opacity var(--t-fast) var(--ease-out);
+}
+
+.intake-thanks-link:hover { opacity: 0.7; }
+
+/* ---------------------------------------------------------------------
+   Mobile tweaks
+   --------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .intake-stage {
+    align-items: flex-start;
+    padding-top: 5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .intake-headline { font-size: 1.85rem; line-height: 1.1; }
+  .intake-question { font-size: 1.4rem; line-height: 1.2; margin-bottom: 1.5rem; }
+  .intake-sub { font-size: 0.98rem; margin-bottom: 1.75rem; }
+  .intake-option {
+    font-size: 0.98rem;
+    min-height: 56px;
+    padding: 0.85rem 1rem;
+    gap: 0.75rem;
+  }
+  .intake-option-key { width: 32px; height: 32px; font-size: 0.85rem; }
+  .intake-btn {
+    width: 100%;
+    max-width: 360px;
+    padding: 1rem 1.5rem;
+  }
+  .intake-fields { gap: 0.85rem; }
+  .intake-close {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .intake-stage { padding-left: 1rem; padding-right: 1rem; }
+  .intake-headline { font-size: 1.65rem; }
+  .intake-question { font-size: 1.25rem; }
+  .intake-option { font-size: 0.94rem; padding: 0.75rem 0.85rem; }
+}
+
+/* ---------------------------------------------------------------------
+   "Other" custom-input panel (revealed after picking the custom option)
+   --------------------------------------------------------------------- */
+.intake-custom {
+  display: flex;
+  gap: 0.6rem;
+  max-width: 620px;
+  margin: 0.85rem auto 0;
+  align-items: stretch;
+  animation: intake-custom-in 0.32s var(--ease-out) both;
+}
+
+.intake-custom[hidden] { display: none; }
+
+.intake-custom input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-sm);
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  transition: background var(--t-fast) var(--ease-out),
+              box-shadow var(--t-fast) var(--ease-out);
+}
+
+.intake-custom input::placeholder { color: rgba(10, 10, 10, 0.45); }
+
+.intake-custom input:focus {
+  outline: none;
+  background: var(--surface);
+  box-shadow: 0 0 0 4px rgba(10, 10, 10, 0.12);
+}
+
+.intake-btn--inline {
+  flex: 0 0 auto;
+  padding: 0.85rem 1.4rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@keyframes intake-custom-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 540px) {
+  .intake-custom { flex-direction: column; }
+  .intake-btn--inline { width: 100%; }
+}
