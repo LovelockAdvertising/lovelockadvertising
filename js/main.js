@@ -161,6 +161,14 @@
      --------------------------------------------------------------------- */
   const counters = document.querySelectorAll('[data-count]');
   if (counters.length) {
+    const fmtCache = {};
+    const fmt = (value, decimals) => {
+      const f = fmtCache[decimals] || (fmtCache[decimals] = new Intl.NumberFormat('en-AU', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      }));
+      return f.format(value);
+    };
     const runCount = (el) => {
       const target = parseFloat(el.getAttribute('data-count')) || 0;
       const duration = 1600;
@@ -172,9 +180,9 @@
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const value = startVal + (target - startVal) * ease(progress);
-        el.textContent = value.toFixed(decimals);
+        el.textContent = fmt(value, decimals);
         if (progress < 1) requestAnimationFrame(tick);
-        else el.textContent = target.toFixed(decimals);
+        else el.textContent = fmt(target, decimals);
       };
       requestAnimationFrame(tick);
     };
@@ -183,7 +191,7 @@
       counters.forEach((el) => {
         const t = parseFloat(el.getAttribute('data-count')) || 0;
         const d = (el.getAttribute('data-decimals') || '0') | 0;
-        el.textContent = t.toFixed(d);
+        el.textContent = fmt(t, d);
       });
     } else {
       const cio = new IntersectionObserver(
