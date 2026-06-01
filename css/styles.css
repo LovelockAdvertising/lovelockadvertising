@@ -2769,6 +2769,19 @@ section {
 .related-card p { color: rgba(255, 255, 255, 0.6); font-size: 0.92rem; margin: 0; }
 .related-card .arrow-link { color: var(--accent); margin-top: var(--space-3); display: inline-block; font-size: 0.88rem; }
 
+.leave-review {
+  text-align: center;
+  margin-top: var(--space-6);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.leave-review a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.leave-review a:hover { opacity: 0.85; }
+
 /* =========================================================================
    Reveal animations:fade-up, slide-in-left, slide-in-right
    ========================================================================= */
