@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="canonical" href="https://www.lovelockadvertising.com/" />
-  <meta name="description" content="Google Ads, Meta Ads, SEO &amp; website design from Lovelock Advertising, an Australian marketing agency that builds growth systems for ambitious businesses, not vanity campaigns." />
+  <meta name="description" content="Lovelock Advertising is an Australian marketing agency building Google Ads, Meta Ads, SEO and website systems for ambitious businesses. Founder-led work, no account managers, real results." />
   <meta property="og:title" content="Lovelock Advertising - Strategic Marketing Partners" />
   <meta property="og:description" content="We design and execute marketing systems that generate real, compounding results: paid advertising, branding, email & SMS, analytics." />
   <meta property="og:type" content="website" />
@@ -533,11 +535,21 @@
   {
     "@context": "https://schema.org",
     "@type": "MarketingAgency",
+    "@id": "https://www.lovelockadvertising.com/#organization",
     "name": "Lovelock Advertising",
+    "alternateName": "Lovelock",
     "url": "https://www.lovelockadvertising.com",
-    "logo": "https://www.lovelockadvertising.com/assets/lovelock-logo.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.lovelockadvertising.com/assets/lovelock-logo.png"
+    },
+    "image": "https://www.lovelockadvertising.com/assets/og-default.jpg",
     "description": "Australian digital marketing agency specialising in Google Ads, Meta Ads, SEO, and websites for ambitious businesses worldwide.",
     "email": "hello@lovelockadvertising.com",
+    "founder": [
+      {"@type": "Person", "name": "Calem Lovelock"},
+      {"@type": "Person", "name": "Will Czornohalan"}
+    ],
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "AU"
@@ -548,6 +560,19 @@
     "areaServed": "Worldwide",
     "foundingLocation": "Australia",
     "knowsAbout": ["Google Ads", "Meta Ads", "SEO", "Web Design", "Digital Marketing"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.lovelockadvertising.com/#website",
+    "url": "https://www.lovelockadvertising.com/",
+    "name": "Lovelock Advertising",
+    "description": "Strategic marketing partners for ambitious businesses.",
+    "publisher": {"@id": "https://www.lovelockadvertising.com/#organization"},
+    "inLanguage": "en-AU"
   }
   </script>
 </body>
