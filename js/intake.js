@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojbojyd';
   const FALLBACK_EMAIL = 'hello@lovelockadvertising.com';
 
   /* ---------------------------------------------------------------------
