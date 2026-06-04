@@ -1222,19 +1222,19 @@ section {
   position: relative;
   flex: 0 0 360px;
   max-width: 360px;
-  padding: var(--space-7);
+  padding: var(--space-7) var(--space-7) var(--space-5);
   background: var(--surface);
   border: 2px solid var(--ink);
   border-radius: var(--r-lg);
   transition: transform var(--t-med) var(--ease-spring), box-shadow var(--t-med), background var(--t-med);
 }
 @media (max-width: 760px) {
-  .testimonial { flex-basis: 320px; max-width: 320px; padding: 2.75rem var(--space-6) var(--space-6); }
+  .testimonial { flex-basis: 320px; max-width: 320px; padding: 2.75rem var(--space-6) var(--space-4); }
   .testimonial blockquote { font-size: 1.05rem; }
   .testimonial .testimonial-stars { margin-top: 0.25rem; }
 }
 @media (max-width: 520px) {
-  .testimonial { flex-basis: 280px; max-width: 280px; padding: 2.5rem var(--space-5) var(--space-6); }
+  .testimonial { flex-basis: 280px; max-width: 280px; padding: 2.5rem var(--space-5) var(--space-4); }
   .testimonial blockquote { font-size: 1rem; line-height: 1.4; margin-bottom: var(--space-5); }
   .testimonial::before,
   .testimonial::after { top: -1.4rem; left: 1.25rem; width: 2.8rem; height: 2.8rem; }
@@ -1347,7 +1347,7 @@ section {
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--muted);
+  color: var(--accent-deep);
   transition: color var(--t-med) var(--ease-out), transform var(--t-med) var(--ease-out);
 }
 .testimonial-visit::after {
