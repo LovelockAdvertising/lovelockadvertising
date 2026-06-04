@@ -1324,6 +1324,45 @@ section {
   display: block;
 }
 
+/* Whole-card link wrapper:keeps existing flex/marquee layout intact */
+.testimonial-link {
+  display: contents;
+  color: inherit;
+  text-decoration: none;
+}
+.testimonial-link .testimonial {
+  cursor: pointer;
+}
+.testimonial-link:focus-visible .testimonial {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+/* "Visit site" text:bottom of card, hover colour shift */
+.testimonial-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--muted);
+  transition: color var(--t-med) var(--ease-out), transform var(--t-med) var(--ease-out);
+}
+.testimonial-visit::after {
+  content: "\2192"; /* arrow */
+  transition: transform var(--t-med) var(--ease-out);
+}
+.testimonial-link:hover .testimonial-visit,
+.testimonial-link:focus-visible .testimonial-visit {
+  color: var(--ink);
+}
+.testimonial-link:hover .testimonial-visit::after,
+.testimonial-link:focus-visible .testimonial-visit::after {
+  transform: translateX(3px);
+}
+
 .hero-sub {
   text-align: center;
   color: var(--muted, #999);
