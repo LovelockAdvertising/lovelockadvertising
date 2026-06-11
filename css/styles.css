@@ -1315,6 +1315,7 @@ section {
   flex-shrink: 0;
 }
 .testimonial .who-name { font-weight: 600; font-size: 0.95rem; color: var(--ink); }
+.testimonial .who-flag { height: 0.8em; width: auto; margin-left: 0.35em; vertical-align: baseline; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08); }
 .testimonial .who-biz { font-size: 0.85rem; color: var(--muted); }
 .testimonial-stars {
   color: #FFC000;
