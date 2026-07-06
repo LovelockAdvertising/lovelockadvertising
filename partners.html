@@ -26,13 +26,18 @@
     .partners-intro h2 { white-space: nowrap; }
     @media (max-width: 520px) { .partners-intro h2 { white-space: normal; } }
 
+    /* Flex + justify-content:center keeps an incomplete final row centered,
+       e.g. the trailing 2 of 5 cards sit under the middle of the top 3.
+       Full rows still fill edge-to-edge since the widths + gaps total 100%. */
     .partners-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: var(--space-6);
     }
-    @media (min-width: 700px)  { .partners-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1080px) { .partners-grid { grid-template-columns: repeat(3, 1fr); } }
+    .partner-card { width: 100%; }
+    @media (min-width: 700px)  { .partner-card { width: calc((100% - var(--space-6)) / 2); } }
+    @media (min-width: 1080px) { .partner-card { width: calc((100% - 2 * var(--space-6)) / 3); } }
 
     .partner-card {
       display: flex;
