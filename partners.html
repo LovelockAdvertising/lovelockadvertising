@@ -80,6 +80,7 @@
     }
 
     .partner-shot {
+      position: relative;
       overflow: hidden;
       aspect-ratio: 1200 / 754;
       background: var(--bg-soft);
@@ -93,6 +94,39 @@
       transition: transform var(--t-slow) var(--ease-out);
     }
     .partner-card:hover .partner-shot img { transform: scale(1.045); }
+
+    /* Hover overlay: darken the screenshot + reveal business name */
+    .partner-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: var(--space-5);
+      text-align: center;
+      background: rgba(6, 6, 6, 0.82);
+      opacity: 0;
+      transition: opacity var(--t-med) var(--ease-out);
+      pointer-events: none;
+    }
+    .partner-overlay span {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #fff;
+      transform: translateY(10px);
+      transition: transform var(--t-med) var(--ease-spring);
+    }
+    .partner-card:hover .partner-overlay { opacity: 1; }
+    .partner-card:hover .partner-overlay span { transform: translateY(0); }
+
+    @media (hover: none) {
+      .partner-overlay { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .partner-overlay span { transition: none; transform: none; }
+    }
 
     .partner-body {
       display: flex;
@@ -269,6 +303,7 @@
           </div>
           <div class="partner-shot">
             <img src="assets/partners/coach-light-cabin.jpg" alt="Coach Light Cabin website homepage" width="1200" height="754" loading="lazy" />
+            <span class="partner-overlay" aria-hidden="true"><span>Coach Light Cabin</span></span>
           </div>
           <div class="partner-body">
             <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
@@ -291,6 +326,7 @@
           </div>
           <div class="partner-shot">
             <img src="assets/partners/smithers-alpine-stays.jpg" alt="Smithers Alpine Stays website homepage" width="1200" height="754" loading="lazy" />
+            <span class="partner-overlay" aria-hidden="true"><span>Smithers Alpine Stays</span></span>
           </div>
           <div class="partner-body">
             <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
@@ -313,6 +349,7 @@
           </div>
           <div class="partner-shot">
             <img src="assets/partners/hudson-bay-mountain.jpg" alt="Hudson Bay Mountain website homepage" width="1200" height="754" loading="lazy" />
+            <span class="partner-overlay" aria-hidden="true"><span>Hudson Bay Mountain</span></span>
           </div>
           <div class="partner-body">
             <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
@@ -335,6 +372,7 @@
           </div>
           <div class="partner-shot">
             <img src="assets/partners/glossed-nails.jpg" alt="Glossed Nail Lounge website homepage" width="1200" height="754" loading="lazy" />
+            <span class="partner-overlay" aria-hidden="true"><span>Glossed Nail Lounge</span></span>
           </div>
           <div class="partner-body">
             <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
@@ -357,6 +395,7 @@
           </div>
           <div class="partner-shot">
             <img src="assets/partners/refined-cabinetry.jpg" alt="Refined Cabinetry website homepage" width="1200" height="754" loading="lazy" />
+            <span class="partner-overlay" aria-hidden="true"><span>Refined Cabinetry</span></span>
           </div>
           <div class="partner-body">
             <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
