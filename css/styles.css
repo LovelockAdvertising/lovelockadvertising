@@ -2671,6 +2671,8 @@ section {
   margin-bottom: var(--space-5);
 }
 .footer-brand p { color: rgba(255, 255, 255, 0.6); max-width: 36ch; font-size: 0.95rem; }
+.footer-brand .footer-legal { color: rgba(255, 255, 255, 0.45); font-size: 0.8rem; line-height: 1.6; margin-top: var(--space-4); max-width: none; white-space: nowrap; }
+@media (max-width: 600px) { .footer-brand .footer-legal { white-space: normal; } }
 
 .footer-col h4 {
   font-family: var(--font-body);
