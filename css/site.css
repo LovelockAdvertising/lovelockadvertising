@@ -635,6 +635,36 @@ p { margin: 0; }
 .contact-list dd { margin: 4px 0 0; font-size: 17px; color: var(--ink); overflow-wrap: anywhere; }
 .contact-list a { color: var(--ink); text-decoration-color: var(--pink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 
+/* Google Calendar booking embed. Google's page is white and can't be restyled,
+   so it sits in a white card with the ice-blue panel frame around it.
+   The iframe can't auto-size and Google's time list runs long, so the frame is sized to the
+   screen: the whole card stays in view and only the time slots scroll inside it. */
+.booking {
+  background: #fff; border-radius: 14px; overflow: hidden;
+  border: 8px solid var(--surface);
+  box-shadow: 0 1px 2px rgba(35,57,114,.06), 0 8px 24px rgba(35,57,114,.07);
+}
+.booking__frame { display: none; width: 100%; height: 560px; height: clamp(480px, calc(100svh - 140px), 720px); border: 0; }
+/* Phones get a button to Google's full-screen booking page instead of the frame */
+.booking__mobile { padding: 32px 24px; text-align: center; }
+.booking__mobile h3 { font-size: 28px; }
+.booking__mobile p { margin: 12px auto 24px; max-width: 360px; color: var(--muted); }
+.booking__mobile .btn { width: 100%; max-width: 320px; }
+@media (min-width: 768px) {
+  .booking { border-width: 12px; }
+  .booking__frame { display: block; }
+  .booking__mobile { display: none; }
+}
+@media (max-width: 767px) { .booking__note { display: none; } }
+.booking__intl {
+  margin: 24px auto 0; max-width: 720px; padding: 14px 20px;
+  background: var(--pink); border-radius: var(--radius);
+  font-size: 16px; color: var(--ink); text-align: center;
+}
+.booking__intl a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.booking__note { margin-top: 16px; font-size: 14px; color: var(--muted); text-align: center; }
+.booking__note a { color: var(--ink); text-decoration-color: var(--pink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
 /* ---------- Numbered process ---------- */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
 .step {
