@@ -191,8 +191,6 @@ p { margin: 0; }
   display: block; padding: 14px 0; border-bottom: 1px solid var(--line);
   font-weight: 500; color: var(--ink); text-decoration: none;
 }
-.mobile-nav .btn { width: 100%; margin-top: 20px; }
-.mobile-nav .mobile-nav__call { margin-top: 12px; gap: 10px; }
 
 /* Services dropdown (desktop). Hover or clicking the Services button opens it */
 .nav { align-items: center; }
@@ -526,7 +524,17 @@ p { margin: 0; }
 
 /* Current page in the menus */
 .nav a[aria-current="page"] { border-bottom-color: var(--navy); }
-.mobile-nav a[aria-current="page"] { font-weight: 700; }
+/* Mobile menu: current page gets a pink pill, navy edge and a "You're here" tag */
+.mobile-nav a[aria-current="page"],
+.mobile-nav .mobile-nav__sub a[aria-current="page"] {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin: 4px 0; padding: 12px 14px; border-bottom: 0; border-left: 4px solid var(--navy);
+  border-radius: 8px; background: var(--pink); color: var(--ink); font-weight: 700;
+}
+.mobile-nav a[aria-current="page"]::after {
+  content: "You're here"; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy);
+}
 
 /* ---------- Page hero ---------- */
 .page-hero { padding: 40px 0 64px; border-bottom: 1px solid var(--line); }
