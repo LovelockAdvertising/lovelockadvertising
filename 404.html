@@ -1,189 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-AU">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ34EBFC0L"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HJ34EBFC0L');
-  </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <meta name="robots" content="noindex, follow" />
-  <meta name="description" content="Page not found. Let's get you back to something useful." />
-  <title>Page Not Found - Lovelock Advertising</title>
-  <link rel="preload" as="image" href="assets/lovelock-logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;900&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=1779618000" />
-  <link rel="stylesheet" href="css/intake.css?v=1779580902" />
+  <script src="js/analytics.js"></script>
+  <title>Page not found | Lovelock Advertising</title>
+  <meta name="description" content="This page does not exist. Head back to the Lovelock Advertising homepage or get in touch.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- ============================ NAVIGATION ============================ -->
-  <header class="site-nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Lovelock Advertising - Home">
-        <img class="nav-logo-img" src="assets/lovelock-logo.png" alt="Lovelock Advertising" />
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <div class="nav-item has-dropdown" data-nav-dropdown>
-          <a href="services.html" class="nav-trigger" aria-haspopup="true" aria-expanded="false" data-dropdown-trigger>
-            Services
-            <svg class="nav-caret" viewBox="0 0 12 7" aria-hidden="true">
-              <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <div class="nav-dropdown" role="menu" aria-label="Services">
-            <div class="nav-dropdown-panel">
-              <span class="nav-dropdown-glow" aria-hidden="true"></span>
-              <span class="nav-dropdown-eyebrow">Our Services</span>
-              <ul class="nav-dropdown-list">
-                <li><a href="services-google-ads.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-num">01</span><span class="nav-dropdown-body"><span class="nav-dropdown-title">Google Ads</span><span class="nav-dropdown-desc">Capture buying intent the moment it appears.</span></span><span class="nav-dropdown-arrow" aria-hidden="true">→</span></a></li>
-                <li><a href="services-meta-ads.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-num">02</span><span class="nav-dropdown-body"><span class="nav-dropdown-title">Meta Ads</span><span class="nav-dropdown-desc">Thumb-stopping creative across Facebook &amp; Instagram.</span></span><span class="nav-dropdown-arrow" aria-hidden="true">→</span></a></li>
-                <li><a href="services-seo.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-num">03</span><span class="nav-dropdown-body"><span class="nav-dropdown-title">SEO</span><span class="nav-dropdown-desc">Own the search results that send you qualified leads.</span></span><span class="nav-dropdown-arrow" aria-hidden="true">→</span></a></li>
-                <li><a href="services-websites.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-num">04</span><span class="nav-dropdown-body"><span class="nav-dropdown-title">Websites</span><span class="nav-dropdown-desc">Conversion engines that look as good as they perform.</span></span><span class="nav-dropdown-arrow" aria-hidden="true">→</span></a></li>
-              </ul>
-              <a href="services.html" class="nav-dropdown-foot" role="menuitem">View all services <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
+  <!-- ========== Header ========== -->
+  <header class="header" id="top">
+    <div class="wrap header__inner">
+      <a href="index.html" class="wordmark" aria-label="Lovelock Advertising, home"><img src="assets/logo/lovelock-horizontal.svg" width="1771" height="254" alt="Lovelock Advertising"></a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="about.html">About</a>
+        <div class="nav__item">
+          <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="services-menu">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav__menu" id="services-menu">
+            <a href="services-google-ads.html">Google Ads</a>
+            <a href="services-meta-ads.html">Meta Ads</a>
+            <a href="services-seo.html">SEO</a>
+            <a href="services-websites.html">Websites</a>
           </div>
         </div>
-        <a href="about.html">About</a>
-        <a href="partners.html">Our Partners</a>
         <a href="contact.html">Contact</a>
-        <a href="#" class="btn nav-cta" data-intake-open>Book a Call</a>
       </nav>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span></button>
+
+      <div class="header__actions">
+        <a href="tel:+61421013558" class="header__phone" aria-label="Call Calem on 0421 013 558"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>0421 013 558</a>
+        <a href="contact.html" class="btn btn--primary btn--sm header__cta">Let's chat</a>
+      </div>
+
+      <a href="tel:+61421013558" class="call-btn" aria-label="Call Calem on 0421 013 558"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="menu-btn__bars" aria-hidden="true"></span>
+        Menu
+      </button>
     </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+      <a href="about.html">About</a>
+      <span class="mobile-nav__label">Services</span>
+      <div class="mobile-nav__sub">
+        <a href="services-google-ads.html">Google Ads</a>
+        <a href="services-meta-ads.html">Meta Ads</a>
+        <a href="services-seo.html">SEO</a>
+        <a href="services-websites.html">Websites</a>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn--primary">Let's chat</a>
+      <a href="tel:+61421013558" class="btn btn--ghost mobile-nav__call"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call Calem 0421 013 558</a>
+    </nav>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <div class="mobile-services">
-      <button type="button" class="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-list">
-        <span>Services</span>
-        <svg class="mobile-services-caret" viewBox="0 0 14 8" aria-hidden="true"><path d="M1 1l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="mobile-services-list" id="mobile-services-list">
-        <a href="services-google-ads.html"><span class="mobile-services-num">01</span>Google Ads</a>
-        <a href="services-meta-ads.html"><span class="mobile-services-num">02</span>Meta Ads</a>
-        <a href="services-seo.html"><span class="mobile-services-num">03</span>SEO</a>
-        <a href="services-websites.html"><span class="mobile-services-num">04</span>Websites</a>
-        <a href="services.html" class="mobile-services-all">View all services <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-    <a href="about.html">About</a>
-    <a href="partners.html">Our Partners</a>
-    <a href="contact.html">Contact</a>
-    <a href="#" class="btn btn-filled nav-cta" data-intake-open>Book a Call</a>
-  </div>
+  <main id="main">
 
-  <!-- ============================ 404 HERO ============================ -->
-  <section class="subhero grain" style="text-align: center;">
-    <div class="hero-decor" data-parallax="-0.3">
-      <div class="hero-ring"></div>
-      <div class="hero-line"></div>
-    </div>
-    <div class="container">
-      <span class="overline reveal">Error 404</span>
-      <h1 class="reveal delay-1">This Page<br><span class="gold">Doesn't Exist.</span></h1>
-      <p class="lead reveal delay-2" style="margin-left: auto; margin-right: auto;">
-        Either the URL is wrong, the page has moved, or we broke something.
-        Either way, here's where to go next.
-      </p>
-      <div class="reveal delay-3" style="margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-        <a href="index.html" class="btn btn-filled btn-lg">
-          Back to Home <span class="arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="#" class="btn btn-ghost btn-lg" data-intake-open>Book a Call</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ WHERE TO GO ============================ -->
-  <section class="section-dark">
-    <div class="container">
-      <div class="section-head center reveal">
-        <span class="overline">Try One of These</span>
-        <h2>Maybe You Were<br><span class="gold">Looking For This?</span></h2>
-        <span class="divider-gold"></span>
-      </div>
-
-      <div class="service-grid">
-        <a href="services.html" class="service-card reveal">
-          <span class="eyebrow-num">01</span>
-          <h3 class="card-h">Services</h3>
-          <p class="card-p">Google Ads, Meta Ads, SEO, and websites. The four pieces of the growth system.</p>
-          <span class="arrow-link">Explore <span class="arrow">→</span></span>
-        </a>
-        <a href="about.html" class="service-card reveal delay-1">
-          <span class="eyebrow-num">02</span>
-          <h3 class="card-h">About</h3>
-          <p class="card-p">Meet Calem and Will. Two founders, every client, no handoffs.</p>
-          <span class="arrow-link">Read <span class="arrow">→</span></span>
-        </a>
-        <a href="insights.html" class="service-card reveal delay-2">
-          <span class="eyebrow-num">03</span>
-          <h3 class="card-h">Insights</h3>
-          <p class="card-p">Plain-English thinking on marketing, ads, and what actually works.</p>
-          <span class="arrow-link">Browse <span class="arrow">→</span></span>
-        </a>
-        <a href="contact.html" class="service-card reveal delay-3">
-          <span class="eyebrow-num">04</span>
-          <h3 class="card-h">Contact</h3>
-          <p class="card-p">Pricing, contracts, and every question answered straight. Reach out directly.</p>
-          <span class="arrow-link">Get in touch <span class="arrow">→</span></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ FOOTER ============================ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo"><img class="footer-logo-img" src="assets/lovelock-logo.png" alt="Lovelock Advertising" /></div>
-          <p>Australian-based digital marketing partners. Building growth engines for ambitious businesses worldwide.</p>
-          <p class="footer-legal">
-            W Czornohalan &amp; C.J Lovelock, trading as Lovelock Advertising<br />
-            ABN 82 475 990 575<br />
-            Australian owned and operated | Adelaide, SA
-          </p>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="insights.html">Insights</a></li>
-            <li><a href="#" data-intake-open>Book a Call</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><a href="mailto:hello@lovelockadvertising.com">hello@lovelockadvertising.com</a></p>
-          <div class="social-row" style="margin-top: 1rem;">
-            <a href="https://www.instagram.com/lovelock.advertising/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.02H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.75 8.43-4.91 8.43-9.93z"/></svg></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <!-- PAGE CONTENT: page-hero first, then sections -->
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="page-hero__inner">
+          <h1>Page <em>not found.</em></h1>
+          <p class="hero__sub">The link is wrong, the page has moved, or we broke something. Either way, here's where to go next.</p>
+          <div class="hero__actions">
+            <a href="index.html" class="btn btn--primary">Back to home</a>
+            <a href="contact.html" class="btn btn--ghost">Contact us</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; <span data-year>2026</span> Lovelock Advertising. All Rights Reserved.</span>
-        <span class="footer-legal"><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms &amp; Conditions</a> &middot; <a href="results.html" rel="nofollow">Results</a></span>
-        <span>Crafted in Australia · Working Globally</span>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Try one of these</p>
+          <h2 class="h2">Looking for<br>this instead?</h2>
+        </div>
+
+        <div class="services services--3">
+          <article class="service">
+            <span class="service__num">01</span>
+            <h3>Services</h3>
+            <p>Google Ads, Meta Ads, SEO and websites, run as one system.</p>
+            <a href="index.html#services" class="text-link">See services <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="service">
+            <span class="service__num">02</span>
+            <h3>About</h3>
+            <p>Meet Calem and Will. Two founders, every client, no handoffs.</p>
+            <a href="about.html" class="text-link">Meet us <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="service">
+            <span class="service__num">03</span>
+            <h3>Contact</h3>
+            <p>Send us an email and talk directly with the people doing the work.</p>
+            <a href="contact.html" class="text-link">Get in touch <span aria-hidden="true">&rarr;</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="index.html" class="wordmark"><img src="assets/logo/lovelock-horizontal.svg" width="1771" height="254" alt="Lovelock Advertising"></a>
+          <p>Lovelock Advertising exists to give service businesses the kind of marketing partner they can call by name. We build the websites, campaigns and systems that turn attention into bookings, and we stick around to make them work harder every month.</p>
+          <p class="footer__legal">
+            W Czornohalan &amp; C.J Lovelock, trading as Lovelock Advertising<br>
+            ABN 82 475 990 575<br>
+            Australian owned and operated. Adelaide, SA
+          </p>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services-google-ads.html">Google Ads</a></li>
+            <li><a href="services-meta-ads.html">Meta Ads</a></li>
+            <li><a href="services-seo.html">SEO</a></li>
+            <li><a href="services-websites.html">Websites</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:hello@lovelockadvertising.com">hello@lovelockadvertising.com</a></li>
+            <li><a href="https://www.instagram.com/lovelock.advertising/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="tel:+61421013558">Calem 0421 013 558</a></li>
+            <li><a href="tel:+61490408501">Will 0490 408 501</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; <span id="year">2026</span> Lovelock Advertising. All rights reserved.</span>
+        <a href="privacy.html">Privacy policy</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=1780320000"></script>
-  <script src="js/intake.js?v=1779580901"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
