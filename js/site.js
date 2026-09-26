@@ -56,25 +56,53 @@
       });
       if (h) quotes.style.setProperty('--quote-h', h + 'px');
     }
-    function setMarquee() {
-      var clones = track.querySelectorAll('[data-clone]');
-      if (desktop.matches && !clones.length) {
-        Array.prototype.forEach.call(track.querySelectorAll('.quote'), function (q) {
-          var c = q.cloneNode(true);
-          c.setAttribute('data-clone', '');
-          c.setAttribute('aria-hidden', 'true');
-          Array.prototype.forEach.call(c.querySelectorAll('button'), function (b) { b.tabIndex = -1; });
-          track.appendChild(c);
+    // Mobile: infinite swipe loop. A cloned set sits either side of the real
+    // cards; when the swipe settles on a clone we jump silently to its twin.
+    var mobile = window.matchMedia('(max-width: 767px)');
+    var originals = Array.prototype.slice.call(track.querySelectorAll('.quote'));
+    function makeClone(q) {
+      var c = q.cloneNode(true);
+      c.setAttribute('data-clone', '');
+      c.setAttribute('aria-hidden', 'true');
+      Array.prototype.forEach.call(c.querySelectorAll('button'), function (b) { b.tabIndex = -1; });
+      return c;
+    }
+    function centreOn(card) {
+      var offset = card.getBoundingClientRect().left - quotes.getBoundingClientRect().left;
+      quotes.scrollLeft += offset - (quotes.clientWidth - card.offsetWidth) / 2;
+    }
+    function setMode() {
+      Array.prototype.forEach.call(track.querySelectorAll('[data-clone]'), function (c) { c.remove(); });
+      if (desktop.matches) {
+        originals.forEach(function (q) { track.appendChild(makeClone(q)); });
+      } else if (mobile.matches) {
+        originals.forEach(function (q) {
+          track.insertBefore(makeClone(q), originals[0]);
+          track.appendChild(makeClone(q));
         });
-      } else if (!desktop.matches) {
-        Array.prototype.forEach.call(clones, function (c) { c.remove(); });
       }
       quotes.classList.toggle('is-marquee', desktop.matches);
       quotes.tabIndex = desktop.matches ? -1 : 0;
       checkOverflow();
+      if (mobile.matches) centreOn(originals[0]);
     }
-    setMarquee();
-    desktop.addEventListener('change', setMarquee);
+    var settle = null;
+    quotes.addEventListener('scroll', function () {
+      if (!mobile.matches) return;
+      clearTimeout(settle);
+      settle = setTimeout(function () {
+        // First child is the clone of the first real card, one full set earlier
+        var setW = originals[0].getBoundingClientRect().left - track.children[0].getBoundingClientRect().left;
+        var mid = quotes.getBoundingClientRect().left + quotes.clientWidth / 2;
+        var first = originals[0].getBoundingClientRect();
+        var last = originals[originals.length - 1].getBoundingClientRect();
+        if (mid < first.left) quotes.scrollLeft += setW;
+        else if (mid > last.right) quotes.scrollLeft -= setW;
+      }, 140);
+    }, { passive: true });
+    setMode();
+    desktop.addEventListener('change', setMode);
+    mobile.addEventListener('change', setMode);
     window.addEventListener('resize', checkOverflow);
     if (document.fonts) document.fonts.ready.then(checkOverflow);
 

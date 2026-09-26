@@ -256,7 +256,10 @@ p { margin: 0; }
 @supports not (-webkit-text-stroke: 2px black) {
   .hero h1 em { color: var(--ink); }
 }
-@media (max-width: 519px) { .hero h1 em { -webkit-text-stroke-width: 1.5px; } }
+/* Mobile: size the title to fill the column ("YOUR BUSINESS." is ~5.9em wide in Anton) */
+@media (max-width: 767px) {
+  .hero h1 { font-size: min(calc((100vw - 2 * var(--gutter)) / 6), 104px); line-height: 0.92; }
+}
 .hero__sub {
   font-size: 19px; color: var(--muted); max-width: 600px; margin-top: 24px;
 }
@@ -415,19 +418,22 @@ p { margin: 0; }
   padding: 24px 24px 22px;
   min-height: var(--quote-h, auto); /* set by JS so collapsed cards match */
 }
+.quotes__hint { display: none; } /* shown on mobile only, desktop scrolls itself */
 /* Mobile (and reduced motion): manual swipe with snap, no clones */
 @media (max-width: 767px) {
   .quotes {
     overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
     -webkit-mask-image: none; mask-image: none;
     margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter);
-    scroll-padding: 0 var(--gutter);
   }
   .quotes::-webkit-scrollbar { display: none; }
-  .quote { width: 85vw; max-width: 360px; margin-right: 16px; scroll-snap-align: start; }
-  .quote:last-child { margin-right: 0; }
+  .quote { width: 85vw; max-width: 360px; margin: 0 8px; scroll-snap-align: center; }
+  .quotes__hint {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    margin-top: 14px; font-size: 13px; color: #9AA0BA;
+  }
 }
-@media (prefers-reduced-motion: reduce) {
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
   .quotes { overflow-x: auto; scroll-snap-type: x mandatory; }
   .quote { scroll-snap-align: start; }
 }
