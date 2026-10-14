@@ -1,0 +1,57 @@
+<!--
+  Website portfolio slider (stacked card carousel), moved off the homepage on 2026-10-14.
+  To reuse: paste this block into any page that loads css/site.css and js/site.js.
+  Styles live under "Stacked client showcase" in css/site.css; behaviour under
+  "Hero client showcase" in js/site.js (it only runs when #showcase is on the page).
+  This folder starts with an underscore, so GitHub Pages does not publish it.
+-->
+        <div class="showcase" id="showcase" role="region" aria-roledescription="carousel" aria-label="Client websites we've built">
+          <div class="showcase__stack">
+            <a class="showcase__card" href="https://smithersalpinestays.com" target="_blank" rel="noopener" data-index="0">
+              <img src="assets/partners/smithers-alpine-stays.jpg" width="1200" height="754" fetchpriority="high"
+                   alt="Smithers Alpine Stays website homepage, built by Lovelock Advertising">
+              <span class="showcase__overlay">
+                <span class="showcase__type">Ski cabins</span>
+                <span class="showcase__name">Smithers Alpine Stays</span>
+                <span class="showcase__loc">BC, Canada</span>
+                <span class="showcase__visit">Visit live site &#8599;<span class="sr-only" style="position:absolute;left:-9999px">(opens in new tab)</span></span>
+              </span>
+            </a>
+            <a class="showcase__card" href="https://hunterhuonvalley.com.au" target="_blank" rel="noopener" data-index="1">
+              <img src="assets/partners/hunter-huon-valley.jpg" width="1200" height="754" loading="lazy"
+                   alt="Hunter Huon Valley website homepage, built by Lovelock Advertising">
+              <span class="showcase__overlay">
+                <span class="showcase__type">Luxury accommodation</span>
+                <span class="showcase__name">Hunter Huon Valley</span>
+                <span class="showcase__loc">Tasmania, Australia</span>
+                <span class="showcase__visit">Visit live site &#8599;<span class="sr-only" style="position:absolute;left:-9999px">(opens in new tab)</span></span>
+              </span>
+            </a>
+            <a class="showcase__card" href="https://hudsonbaymountain.com" target="_blank" rel="noopener" data-index="2">
+              <img src="assets/partners/hudson-bay-mountain.jpg" width="1200" height="754" loading="lazy"
+                   alt="Hudson Bay Mountain website homepage, built by Lovelock Advertising">
+              <span class="showcase__overlay">
+                <span class="showcase__type">Ski resort</span>
+                <span class="showcase__name">Hudson Bay Mountain</span>
+                <span class="showcase__loc">BC, Canada</span>
+                <span class="showcase__visit">Visit live site &#8599;<span class="sr-only" style="position:absolute;left:-9999px">(opens in new tab)</span></span>
+              </span>
+            </a>
+            <a class="showcase__card" href="https://coachlightcabin.com" target="_blank" rel="noopener" data-index="3">
+              <img src="assets/partners/coach-light-cabin.jpg" width="1200" height="754" loading="lazy"
+                   alt="Coach Light Cabin website homepage, built by Lovelock Advertising">
+              <span class="showcase__overlay">
+                <span class="showcase__type">Luxury accommodation</span>
+                <span class="showcase__name">Coach Light Cabin</span>
+                <span class="showcase__loc">Adelaide, Australia</span>
+                <span class="showcase__visit">Visit live site &#8599;<span class="sr-only" style="position:absolute;left:-9999px">(opens in new tab)</span></span>
+              </span>
+            </a>
+          </div>
+          <button class="showcase__btn showcase__btn--prev" type="button" aria-label="Previous client">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="showcase__btn showcase__btn--next" type="button" aria-label="Next client">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
