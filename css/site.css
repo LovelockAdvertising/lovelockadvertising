@@ -521,7 +521,7 @@ p { margin: 0; }
 }
 
 /* ---------- Homepage hero: centred, rotating word ---------- */
-.hero--centred { padding: 56px 0 72px; text-align: center; }
+.hero--centred { padding: 56px 0 72px; text-align: center; overflow: hidden; } /* hides words while they slide in and out */
 .hero__center { display: flex; flex-direction: column; align-items: center; }
 .hero--centred h1 {
   white-space: normal; line-height: 0.92;
@@ -560,6 +560,16 @@ p { margin: 0; }
   12%  { opacity: 1; transform: none; }
   14.3% { opacity: 0; transform: translateX(-60%); }
   100% { opacity: 0; transform: translateX(-60%); }
+}
+/* Phones: bigger title. "MARKETING FOR" (~5.9em) sets the size; long rotating words wrap
+   onto a second line and "Accommodation." becomes "Stays." */
+.rotor__short { display: none; }
+@media (max-width: 767px) {
+  .hero--centred h1 { font-size: min(calc((100vw - 2 * var(--gutter)) / 5.95), 100px); }
+  .rotor { align-items: center; }
+  .rotor > span { max-width: calc(100vw - 2 * var(--gutter)); }
+  .rotor__full { display: none; }
+  .rotor__short { display: inline; }
 }
 @supports not (-webkit-text-stroke: 2px black) { .rotor > span { color: var(--ink); } }
 @media (prefers-reduced-motion: reduce) {
