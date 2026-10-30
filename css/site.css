@@ -830,3 +830,32 @@ p { margin: 0; }
   padding: 12px 16px; font-size: 14px; color: var(--muted);
   background: var(--surface); border-top: 1px solid var(--line);
 }
+
+/* ---------- Press: clients featured in ----------
+   Each row holds two identical sets; the track slides by exactly one set (-50%)
+   so the loop is seamless. Spacing uses margin-right, not gap, to keep that maths exact. */
+.press { padding: 0; text-align: center; }
+.press .eyebrow { margin-bottom: 26px; }
+.press__rows { display: grid; gap: 22px; }
+.press__row {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+.press__track { display: flex; width: max-content; animation: press-scroll 60s linear infinite; }
+.press__row--reverse .press__track { animation-direction: reverse; animation-duration: 52s; }
+.press__rows:hover .press__track { animation-play-state: paused; }
+.press__set { display: flex; align-items: center; flex-shrink: 0; }
+.press__set img { display: block; height: var(--h, 26px); width: auto; max-width: none; margin-right: 56px; }
+@keyframes press-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 767px) {
+  .press__rows { gap: 18px; }
+  .press__set img { height: calc(var(--h, 26px) * .85); margin-right: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .press__row { -webkit-mask-image: none; mask-image: none; }
+  .press__track { animation: none; width: auto; justify-content: center; }
+  .press__set { flex-wrap: wrap; justify-content: center; gap: 18px 40px; flex-shrink: 1; }
+  .press__set[aria-hidden="true"] { display: none; }
+  .press__set img { margin-right: 0; }
+}
