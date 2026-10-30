@@ -836,6 +836,7 @@ p { margin: 0; }
    so the loop is seamless. Spacing uses margin-right, not gap, to keep that maths exact. */
 .press { padding: 0; text-align: center; }
 .press .eyebrow { margin-bottom: 26px; }
+.press .eyebrow::before { display: none; }
 .press__rows { display: grid; gap: 22px; }
 .press__row {
   overflow: hidden;
