@@ -465,6 +465,20 @@ p { margin: 0; }
 }
 .quote:not(.is-expanded) blockquote p { display: inline; }
 .quote:not(.is-expanded) blockquote p + p::before { content: " "; }
+/* Expanded: long reviews scroll inside the card instead of stretching the section */
+.quote.is-expanded blockquote {
+  max-height: min(440px, 62vh); overflow-y: auto; overscroll-behavior: contain;
+  padding-right: 10px; margin-right: -10px;
+  scrollbar-width: thin; scrollbar-color: rgba(35,57,114,.25) transparent;
+}
+.quote.is-expanded blockquote::-webkit-scrollbar { width: 6px; }
+.quote.is-expanded blockquote::-webkit-scrollbar-thumb { background: rgba(35,57,114,.25); border-radius: 3px; }
+/* Soft fade on whichever edge has more text (classes set by site.js) */
+.quote.is-expanded blockquote.fade-top { -webkit-mask-image: linear-gradient(to bottom, transparent, #000 40px); mask-image: linear-gradient(to bottom, transparent, #000 40px); }
+.quote.is-expanded blockquote.fade-bottom { -webkit-mask-image: linear-gradient(to top, transparent, #000 40px); mask-image: linear-gradient(to top, transparent, #000 40px); }
+.quote.is-expanded blockquote.fade-top.fade-bottom { -webkit-mask-image: linear-gradient(transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(transparent, #000 40px, #000 calc(100% - 40px), transparent); }
+.quote__sign { font-weight: 700; }
+.quote:not(.is-expanded) blockquote .quote__sign { display: none; }
 .quote__toggle {
   align-self: flex-start; margin-top: 10px; padding: 0;
   font: inherit; font-size: 15px; color: var(--muted); cursor: pointer;

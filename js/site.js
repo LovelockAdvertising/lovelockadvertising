@@ -113,9 +113,22 @@
       var open = btn.getAttribute('aria-expanded') !== 'true';
       btn.setAttribute('aria-expanded', String(open));
       btn.textContent = open ? 'Hide' : 'Read more';
-      btn.closest('.quote').classList.toggle('is-expanded', open);
+      var card = btn.closest('.quote');
+      card.classList.toggle('is-expanded', open);
+      var bq = card.querySelector('blockquote');
+      bq.scrollTop = 0;
+      fadeEdges(bq);
       quotes.classList.toggle('is-paused', !!track.querySelector('.quote.is-expanded'));
     });
+    // Long expanded reviews scroll inside the card; fade the edges that have more text
+    function fadeEdges(bq) {
+      var open = bq.parentNode.classList.contains('is-expanded');
+      bq.classList.toggle('fade-top', open && bq.scrollTop > 2);
+      bq.classList.toggle('fade-bottom', open && bq.scrollTop + bq.clientHeight < bq.scrollHeight - 2);
+    }
+    track.addEventListener('scroll', function (e) {
+      if (e.target.tagName === 'BLOCKQUOTE') fadeEdges(e.target);
+    }, true);
   }
 
   // Hero client showcase: stacked cards, auto-advance, pause on hover
