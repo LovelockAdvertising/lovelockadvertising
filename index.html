@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/site.css?v=20261031b">
+  <link rel="stylesheet" href="css/site.css?v=20261118c">
   <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/logo/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
@@ -127,12 +127,14 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- ========== Header ========== -->
-  <header class="header" id="top">
+  <!-- No id="top" here: the header is sticky, so the logo's #top link would target it and not scroll. A bare #top goes to the top of the page -->
+  <header class="header">
     <div class="wrap header__inner">
       <a href="#top" class="wordmark" aria-label="Lovelock Advertising, home"><img src="assets/logo/lovelock-horizontal.svg" width="1771" height="254" alt="Lovelock Advertising"></a>
 
       <nav class="nav" aria-label="Primary">
         <a href="about.html">About</a>
+        <a href="work.html">Work</a>
         <div class="nav__item">
           <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="services-menu">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="nav__menu" id="services-menu">
@@ -161,6 +163,7 @@
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
       <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
+      <a href="work.html">Work</a>
       <span class="mobile-nav__label">Services</span>
       <div class="mobile-nav__sub">
         <a href="services-google-ads.html">Google Ads</a>
@@ -197,7 +200,7 @@
         <p class="hero__sub">Google Ads, Meta Ads, SEO and websites for lodges, cabins, luxury stays, ski resorts, tours and experiences businesses. The founders run every account, and every piece of work is done in-house.</p>
         <div class="hero__actions">
           <a href="contact.html#book" class="btn btn--primary">Let's chat</a>
-          <a href="#work" class="btn btn--ghost">See our results</a>
+          <a href="#client-highlight" class="btn btn--ghost">See our results</a>
         </div>
         <p class="hero__note">30 minutes. No obligation. A strategic conversation about your bookings.</p>
       </div>
@@ -215,23 +218,51 @@
       </div>
     </section>
 
-    <!-- ========== Case studies ========== -->
-    <section class="section" id="work">
+    <!-- ========== Client highlight ========== -->
+    <!-- Photo: assets/partners/thorns-highlight.jpg (taken from the Thorn's site). Replace the file to swap it, and update width/height if the size changes -->
+    <section class="section" id="client-highlight">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Selected work</p>
-          <h2 class="h2">Client partnerships.</h2>
+          <p class="eyebrow">Client highlight</p>
+          <h2 class="h2">Thorn&rsquo;s Mountain Retreats</h2>
+          <p class="lede">Our featured partner: Mountain retreats in Western Australia.</p>
         </div>
 
-        <div class="cases">
+        <article class="feature">
+          <figure class="feature__img"><img src="assets/partners/thorns-highlight.jpg" width="1200" height="630" loading="lazy" alt="A cottage at Thorn&rsquo;s Mountain Retreats in golden light, beneath a forested mountainside in Western Australia"></figure>
+          <div class="feature__body">
+            <span class="case__tag">Ongoing partnership</span>
+            <p class="case__meta">Mountain retreats <span aria-hidden="true">&middot;</span> Western Australia</p>
+            <p class="feature__story">The old website didn&rsquo;t do the property justice, so we built a new one that shows the stay the way the owner, Mike, sees it. We spent a week on-site at the property, building it alongside him, and added direct booking so guests can book straight from the site. We also set it up for SEO and GEO, so the property now shows up organically on Google and in AI search answers.</p>
+            <blockquote class="feature__quote">
+              <p>&ldquo;&hellip;Calem knows success comes from doing a job super well and making sure his client is happy with the result&hellip;&rdquo;</p>
+              <footer>Michael Thorn, owner <span aria-hidden="true">&middot;</span> <a href="#testimonials" class="feature__more">Read the full review</a></footer>
+            </blockquote>
+            <div class="feature__actions">
+              <a href="https://thornsmountainretreats.com.au" class="btn btn--primary" target="_blank" rel="noopener">Visit live site <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in new tab)</span></a>
+              <a href="work.html" class="btn btn--ghost">See all client work <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== Client work ========== -->
+    <section class="section" id="client-work">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Client work</p>
+          <h2 class="h2">Recent partnerships.</h2>
+        </div>
+
+        <div class="cases cases--compact">
           <article class="case">
             <figure class="case__img"><img src="assets/partners/smithers-alpine-stays.jpg" width="1200" height="754" loading="lazy" alt="Smithers Alpine Stays website homepage"></figure>
             <div class="case__body">
               <p class="case__meta">Ski cabins <span aria-hidden="true">&middot;</span> BC, Canada</p>
               <h3>Smithers Alpine Stays</h3>
-              <p class="case__outcome">Took a ski cabin business from relying on Airbnb to owning its own direct booking channel, and into a fully booked winter season.</p>
+              <p class="case__outcome">Took a ski cabin business from relying on Airbnb to owning its own direct booking channel.</p>
               <div class="case__foot">
-                <span class="case__tag">Ongoing partnership</span>
                 <a href="https://smithersalpinestays.com" class="text-link" target="_blank" rel="noopener">Visit live site <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in new tab)</span></a>
               </div>
             </div>
@@ -241,9 +272,8 @@
             <div class="case__body">
               <p class="case__meta">Luxury accommodation <span aria-hidden="true">&middot;</span> Tasmania, Australia</p>
               <h3>Hunter Huon Valley</h3>
-              <p class="case__outcome">Gave a luxury retreat a direct booking channel that tells its story properly, with no platform commission on the stays it brings in.</p>
+              <p class="case__outcome">A direct booking channel for a luxury retreat, with no platform commission on the stays it brings in.</p>
               <div class="case__foot">
-                <span class="case__tag">Ongoing partnership</span>
                 <a href="https://hunterhuonvalley.com.au" class="text-link" target="_blank" rel="noopener">Visit live site <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in new tab)</span></a>
               </div>
             </div>
@@ -253,9 +283,8 @@
             <div class="case__body">
               <p class="case__meta">Ski resort <span aria-hidden="true">&middot;</span> BC, Canada</p>
               <h3>Hudson Bay Mountain</h3>
-              <p class="case__outcome">Rebuilt the resort&rsquo;s website and search foundations around what skiers look for first: conditions, lift tickets and lessons.</p>
+              <p class="case__outcome">A rebuilt website and search foundations, built around what skiers look for first.</p>
               <div class="case__foot">
-                <span class="case__tag">Ongoing partnership</span>
                 <a href="https://hudsonbaymountain.com" class="text-link" target="_blank" rel="noopener">Visit live site <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in new tab)</span></a>
               </div>
             </div>
@@ -265,14 +294,14 @@
             <div class="case__body">
               <p class="case__meta">Luxury accommodation <span aria-hidden="true">&middot;</span> Adelaide, Australia</p>
               <h3>Coach Light Cabin</h3>
-              <p class="case__outcome">Positioned a boutique cabin to win guests directly instead of competing in a crowded platform search, with more qualified enquiries in the first month than the three before it.</p>
+              <p class="case__outcome">Positioned a boutique cabin to win guests directly instead of competing in platform search.</p>
               <div class="case__foot">
-                <span class="case__tag">Ongoing partnership</span>
                 <a href="https://coachlightcabin.com" class="text-link" target="_blank" rel="noopener">Visit live site <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in new tab)</span></a>
               </div>
             </div>
           </article>
         </div>
+        <p class="cases__more"><a href="work.html" class="text-link">View all client work <span aria-hidden="true">&rarr;</span></a></p>
       </div>
     </section>
 
@@ -605,6 +634,7 @@
           <h4>Company</h4>
           <ul>
             <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
