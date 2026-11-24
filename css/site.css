@@ -513,7 +513,11 @@ p { margin: 0; }
 .footer { border-top: 1px solid var(--line); padding: 64px 0 32px; font-size: 15px; }
 .footer__grid { display: grid; gap: 40px; }
 .footer__about p { color: var(--muted); margin-top: 16px; max-width: 520px; }
-.footer__about .footer__legal { font-size: 13px; color: var(--muted); margin-top: 20px; line-height: 1.7; max-width: none; }
+.footer__legal { display: grid; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); max-width: 520px; }
+.footer__about .footer__legal p { font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; max-width: none; }
+.footer__legal .footer__entity { color: var(--ink); font-weight: 600; }
+.footer__legal .footer__abn { font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.footer__about .footer__legal .footer__origin { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
 .footer h4 {
   font-family: var(--font-head); font-size: 18px; font-weight: 400;
   text-transform: uppercase; letter-spacing: .03em; color: var(--ink); margin: 0 0 16px;
